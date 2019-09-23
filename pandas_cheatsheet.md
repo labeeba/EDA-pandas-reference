@@ -1,21 +1,21 @@
 main data structures - Series (1D) and Dataframe (2D)
 
-1. display options
+#1. display options
 ```python
 pd.set_option("display.precision", 2)
 
 ```
-2. loading
+#2. loading
 ```python
 df = pd.read_csv('____.csv')
 ```
 
-3. displaying 
+#3. displaying 
 ```python
 df.head()    #display first 5 rows of dataframe
 ```
 
-4. stats about dataframe
+#4. stats about dataframe
 ```python
 df.shape     # (rows, column) ex: (3333,20)
 df.columns   # column names
@@ -28,12 +28,12 @@ df['col_name'].value_counts()  # in case of bool - distribution of how many rows
 df['col_name'].value_counts(normalize=True) #for fractions
 
 ```
-- specific stats 
+    - specific stats 
 ```python
 df['col_name'].mean() #df['Churn'].mean()
 ```
 
-- indexing + stats
+    - indexing + stats
 ```python
 
 
