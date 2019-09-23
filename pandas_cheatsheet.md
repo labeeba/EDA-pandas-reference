@@ -15,7 +15,18 @@ df = pd.read_csv('____.csv')
 df.head()    #display first 5 rows of dataframe
 ```
 
-4. ### stats about dataframe
+  * #### sorting by 1 column
+  ```python
+  df.sort_values(by='col_name', ascending=False).head()
+  ```
+  
+  * #### sorting by multiple columns
+  ```python
+  df.sort_values(by=['col_name1','col_name2'], ascending=[True,False]).head()
+  ```
+    
+
+### 4. stats about dataframe
 ```python
 df.shape     # (rows, column) ex: (3333,20)
 df.columns   # column names
@@ -28,15 +39,19 @@ df['col_name'].value_counts()  # in case of bool - distribution of how many rows
 df['col_name'].value_counts(normalize=True) #for fractions
 
 ```
-  * #### specific stats 
+  * #### col specific indexing +  stats 
     
 ```python
 df['col_name'].mean() #df['Churn'].mean()
 ```
 
-  * ####  indexing + stats
+  * ####  boolean indexing + stats
 ```python
 
 
 ```
+### 5. manipulation
+```python
+df['col_name'] = df['col_name'].astype('int64')  #converting bool to int64
 
+```
