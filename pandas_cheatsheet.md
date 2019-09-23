@@ -1,11 +1,11 @@
 main data structures - Series (1D) and Dataframe (2D)
 
-#### 1. display options
+### 1. display options
 ```python
 pd.set_option("display.precision", 2)
 
 ```
-# 2. loading
+### 2. loading
 ```python
 df = pd.read_csv('____.csv')
 ```
