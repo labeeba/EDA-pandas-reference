@@ -28,13 +28,13 @@ df['col_name'].value_counts()  # in case of bool - distribution of how many rows
 df['col_name'].value_counts(normalize=True) #for fractions
 
 ```
-  ####  - specific stats 
+  ####  * specific stats 
     
 ```python
 df['col_name'].mean() #df['Churn'].mean()
 ```
 
-    - indexing + stats
+  ####  * indexing + stats
 ```python
 
 
