@@ -23,12 +23,13 @@ df.info      # column names + no. of rows + type (bool, int64, float64, object) 
 df.describe() #stats of all numerical features - no. of non missing values(Count), mean, std dev, range, median, 0.25 and 0.75 quartiles
 
 #stats of non-numerical features
-df.describe(include=["object", "bool"])
+df.describe(include=['object', 'bool'])
 df['col_name'].value_counts()  # in case of bool - distribution of how many rows have 0, and how many are 1
 df['col_name'].value_counts(normalize=True) #for fractions
 
 ```
-    - specific stats 
+  ####  - specific stats 
+    
 ```python
 df['col_name'].mean() #df['Churn'].mean()
 ```
