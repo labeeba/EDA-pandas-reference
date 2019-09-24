@@ -13,6 +13,8 @@ df = pd.read_csv('____.csv')
  ### 3. displaying 
 ```python
 df.head()    #display first 5 rows of dataframe
+df[-1:]      #indexing the last row
+df[:1] ]     #indexing the first row 
 ```
 
   * #### sorting by 1 column
@@ -24,7 +26,15 @@ df.head()    #display first 5 rows of dataframe
   ```python
   df.sort_values(by=['col_name1','col_name2'], ascending=[True,False]).head()
   ```
-    
+  
+   * #### indexing by name (loc)
+  ```python
+  df.loc[0:5, 'state': 'area_Code'] # first 6 rows (5 inclusive) and columns labelled from state to area code
+  ```
+   * #### indexed by number (iloc)
+  ```python
+  df.iloc[0:5, 0:3] #first 5 rows (5 not inclusive) and first 3 columns.
+  ```
 
 ### 4. stats about dataframe
 ```python
@@ -47,6 +57,13 @@ df['col_name'].mean() #df['Churn'].mean()
 
   * ####  boolean indexing + stats
 ```python
+df[df['col_name'] == 1].mean() #stats of all the rows which have for ex. churn ==1
+
+#getting mean of a specific column where ex. churn ==1
+df[df['col_name'] == 1]['col_name2'].mean()
+
+#getting max number for a specific column based off 2 column filters 
+df[(df['col_name'] == 1) & (df['col_name2'] == 'No') ]['col_name3'].max()
 
 
 ```
