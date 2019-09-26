@@ -1,4 +1,5 @@
-summarized mainly from this kaggle kernel: https://www.kaggle.com/kashnitsky/topic-1-exploratory-data-analysis-with-pandas 
+[1]summarized mainly from this kaggle kernel: https://www.kaggle.com/kashnitsky/topic-1-exploratory-data-analysis-with-pandas 
+[2] more examples about group by and agg: https://www.shanelynn.ie/summarising-aggregation-and-grouping-data-in-python-pandas/
 
 main data structures - Series (1D) and Dataframe (2D)
 
@@ -63,12 +64,29 @@ df[:1] ]     #indexing the first row
 
   * #### grouping
   ```python
-  df.apply(np.max) #displays max of each column - can add axis=1 but lambda functions are more convenient
+  #divides data by values of grouping columns and then selects the columns to show or all columns if not specified
+  #then function or several is applied to the obtained group
+  df.groupby(by=grouping_columns)[columns_to_show].function()
+  
+  columns_to_show = ['Total day minutes', 'Total eve minutes', 
+                   'Total night minutes']
+  df.groupby(['Churn'])[columns_to_show].describe(percentiles=[])
+  
+  ```
+  another example from [2]
+    ```python
+  # Get the sum of the durations per month
+data.groupby('month')['duration'].sum()
+
+# Get the number of dates / entries in each month
+data.groupby('month')['date'].count()
+```
+
+  * #### grouping + agg
   ```
   
-  * #### 
   ```python
-  df[df['col'].apply(lambda s: s[0] == 'W')].head() #displays rows filtered by that column where value starts with W
+  df.groupby(['Churn'])[columns_to_show].describe(percentiles=[])
   ```
   
    * #### 
