@@ -37,6 +37,26 @@ df[:1] ]     #indexing the first row
   ```python
   df.iloc[0:5, 0:3] #first 5 rows (5 not inclusive) and first 3 columns.
   ```
+  
+  * #### FUNCTIONS - apply - for columns
+  ```python
+  df.apply(np.max) #displays max of each column - can add axis=1 but lambda functions are more convenient
+  ```
+  
+  * #### FUNCTIONS - apply - for rows - lambda functions
+  ```python
+  df[df['col'].apply(lambda s: s[0] == 'W')].head() #displays rows filtered by that column where value starts with W
+  ```
+  
+   * #### FUNCTIONS - map 
+   replace values in a column - by passing a dictionary as its argument
+  ```python
+  df.loc[0:5, 'state': 'area_Code'] # first 6 rows (5 inclusive) and columns labelled from state to area code
+  ```
+   * #### FUNCTIONS - replace 
+  ```python
+  df.iloc[
+  ```
 
 ### 4. stats about dataframe
 
@@ -51,6 +71,9 @@ df.columns   # column names
 
 ```python
 df.info      # column names + no. of rows + type (bool, int64, float64, object) - CAN FIND IF MISSING ENTRIES (don't match up to no. of rows in shape)
+
+* #### stats of numerical features
+```python
 df.describe() #stats of all numerical features - no. of non missing values(Count), mean, std dev, range, median, 0.25 and 0.75 quartiles
 ```
 
@@ -75,7 +98,7 @@ df[df['col_name'] == 1].mean() #stats of all the rows which have for ex. churn =
 #getting mean of a specific column where ex. churn ==1
 df[df['col_name'] == 1]['col_name2'].mean()
 
-#getting max number for a specific column based off 2 column filters 
+#getting max number for a specific column based off 2 column filters  (max of col 3 if col 1 and col 3 are satisfied)
 df[(df['col_name'] == 1) & (df['col_name2'] == 'No') ]['col_name3'].max()
 
 
