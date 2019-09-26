@@ -39,13 +39,24 @@ df[:1] ]     #indexing the first row
   ```
 
 ### 4. stats about dataframe
+
+* #### shape
 ```python
 df.shape     # (rows, column) ex: (3333,20)
+```
+* #### column names
+```python
 df.columns   # column names
+```
+
+```python
 df.info      # column names + no. of rows + type (bool, int64, float64, object) - CAN FIND IF MISSING ENTRIES (don't match up to no. of rows in shape)
 df.describe() #stats of all numerical features - no. of non missing values(Count), mean, std dev, range, median, 0.25 and 0.75 quartiles
+```
 
-#stats of non-numerical features
+
+* #### stats of non-numerical features
+```python
 df.describe(include=['object', 'bool'])
 df['col_name'].value_counts()  # in case of bool - distribution of how many rows have 0, and how many are 1
 df['col_name'].value_counts(normalize=True) #for fractions
