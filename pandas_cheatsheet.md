@@ -94,11 +94,43 @@ data.groupby(['month', 'item'])['date'].count()
 ```
 
   * #### grouping + agg
-  ```
+  agg() - pass a function or list of functions
   
   ```python
-  df.groupby(['Churn'])[columns_to_show].describe(percentiles=[])
+   df.groupby(['Churn'])[columns_to_show].agg([np.mean, np.std, np.min, 
+                                            np.max])
+                                            
+  grouped = data.groupby('month').agg("duration": [min, max, mean]) 
+# Using ravel, and a string join, we can create better names for the columns:
+grouped.columns = ["_".join(x) for x in grouped.columns.ravel()]
+
+```
+
+from [2]
+  ```python
+aggregations = {
+    'duration':'sum',
+    'date': lambda x: max(x) - 1
+}
+data.groupby('month').agg(aggregations)
+
+
+# Group the data frame by month and item and extract a number of stats from each group
+data.groupby(
+    ['month', 'item']
+).agg(
+    {
+        # find the min, max, and sum of the duration column
+        'duration': [min, max, sum],
+         # find the number of network type entries
+        'network_type': "count",
+        # min, first, and number of unique dates per group
+        'date': [min, 'first', 'nunique']
+    }
+
   ```
+  
+  
   
    * #### 
    replace values in a column - by passing a dictionary as its argument- {old value: new value}
