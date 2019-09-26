@@ -1,4 +1,5 @@
 [1]summarized mainly from this kaggle kernel: https://www.kaggle.com/kashnitsky/topic-1-exploratory-data-analysis-with-pandas 
+
 [2] more examples about group by and agg: https://www.shanelynn.ie/summarising-aggregation-and-grouping-data-in-python-pandas/
 
 main data structures - Series (1D) and Dataframe (2D)
@@ -80,6 +81,9 @@ data.groupby('month')['duration'].sum()
 
 # Get the number of dates / entries in each month
 data.groupby('month')['date'].count()
+
+# What is the sum of durations, for calls only, to each network
+data[data['item'] == 'call'].groupby('network')['duration'].sum()
 ```
 
   * #### grouping + agg
