@@ -38,28 +38,50 @@ df[:1] ]     #indexing the first row
   df.iloc[0:5, 0:3] #first 5 rows (5 not inclusive) and first 3 columns.
   ```
   
-  * #### FUNCTION - apply - for columns
+  * #### apply function to cols
   ```python
   df.apply(np.max) #displays max of each column - can add axis=1 but lambda functions are more convenient
   ```
   
-  * #### FUNCTION - apply - for rows - lambda functions
+  * #### apply function to rows - lambda function
   ```python
   df[df['col'].apply(lambda s: s[0] == 'W')].head() #displays rows filtered by that column where value starts with W
   ```
   
-   * #### FUNCTION - map 
+   * #### map function to replace values
    replace values in a column - by passing a dictionary as its argument- {old value: new value}
   ```python
   d= {'No': False, 'Yes': True}
   df['col'] = df['col'].map(d)
   ```
-   * #### FUNCTIONS - replace 
+   * #### replace function
    also replace values in a column - {name of column: dictionary itself}
   ```python
   df = df.replace({'col': d})
   ```
 
+
+  * #### apply function to cols
+  ```python
+  df.apply(np.max) #displays max of each column - can add axis=1 but lambda functions are more convenient
+  ```
+  
+  * #### apply function to rows - lambda function
+  ```python
+  df[df['col'].apply(lambda s: s[0] == 'W')].head() #displays rows filtered by that column where value starts with W
+  ```
+  
+   * #### map function to replace values
+   replace values in a column - by passing a dictionary as its argument- {old value: new value}
+  ```python
+  d= {'No': False, 'Yes': True}
+  df['col'] = df['col'].map(d)
+  ```
+   * #### replace function
+   also replace values in a column - {name of column: dictionary itself}
+  ```python
+  df = df.replace({'col': d})
+  ```
 ### 4. stats about dataframe
 
 * #### shape
