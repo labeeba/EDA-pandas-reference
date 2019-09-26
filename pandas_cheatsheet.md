@@ -132,17 +132,7 @@ data.groupby(
   
   
   
-   * #### 
-   replace values in a column - by passing a dictionary as its argument- {old value: new value}
-  ```python
-  d= {'No': False, 'Yes': True}
-  df['col'] = df['col'].map(d)
-  ```
-   * #### 
-   also replace values in a column - {name of column: dictionary itself}
-  ```python
-  df = df.replace({'col': d})
-  ```
+
 ### 4. stats about dataframe
 
 * #### shape
