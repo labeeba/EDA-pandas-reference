@@ -38,24 +38,26 @@ df[:1] ]     #indexing the first row
   df.iloc[0:5, 0:3] #first 5 rows (5 not inclusive) and first 3 columns.
   ```
   
-  * #### FUNCTIONS - apply - for columns
+  * #### FUNCTION - apply - for columns
   ```python
   df.apply(np.max) #displays max of each column - can add axis=1 but lambda functions are more convenient
   ```
   
-  * #### FUNCTIONS - apply - for rows - lambda functions
+  * #### FUNCTION - apply - for rows - lambda functions
   ```python
   df[df['col'].apply(lambda s: s[0] == 'W')].head() #displays rows filtered by that column where value starts with W
   ```
   
-   * #### FUNCTIONS - map 
-   replace values in a column - by passing a dictionary as its argument
+   * #### FUNCTION - map 
+   replace values in a column - by passing a dictionary as its argument- {old value: new value}
   ```python
-  df.loc[0:5, 'state': 'area_Code'] # first 6 rows (5 inclusive) and columns labelled from state to area code
+  d= {'No': False, 'Yes': True}
+  df['col'] = df['col'].map(d)
   ```
    * #### FUNCTIONS - replace 
+   also replace values in a column - {name of column: dictionary itself}
   ```python
-  df.iloc[
+  df = df.replace({'col': d})
   ```
 
 ### 4. stats about dataframe
@@ -71,6 +73,7 @@ df.columns   # column names
 
 ```python
 df.info      # column names + no. of rows + type (bool, int64, float64, object) - CAN FIND IF MISSING ENTRIES (don't match up to no. of rows in shape)
+```
 
 * #### stats of numerical features
 ```python
