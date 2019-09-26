@@ -19,6 +19,8 @@ df = pd.read_csv('____.csv')
 df.head()    #display first 5 rows of dataframe
 df[-1:]      #indexing the last row
 df[:1] ]     #indexing the first row 
+data['network'].nunique()  # Number of non-null unique network entries [2]
+
 ```
 
   * #### sorting by 1 column
@@ -74,7 +76,7 @@ df[:1] ]     #indexing the first row
   df.groupby(['Churn'])[columns_to_show].describe(percentiles=[])
   
   ```
-  another example from [2]
+  examples from [2]
 ```python
 # Get the sum of the durations per month
 data.groupby('month')['duration'].sum()
@@ -84,6 +86,11 @@ data.groupby('month')['date'].count()
 
 # What is the sum of durations, for calls only, to each network
 data[data['item'] == 'call'].groupby('network')['duration'].sum()
+
+# grouping by more than one variable
+# How many calls, sms, and data entries are in each month?
+data.groupby(['month', 'item'])['date'].count()
+
 ```
 
   * #### grouping + agg
