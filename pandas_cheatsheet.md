@@ -1,3 +1,5 @@
+summarized mainly from this kaggle kernel: https://www.kaggle.com/kashnitsky/topic-1-exploratory-data-analysis-with-pandas 
+
 main data structures - Series (1D) and Dataframe (2D)
 
  ### 1. display options
