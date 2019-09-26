@@ -40,7 +40,7 @@ df[:1] ]     #indexing the first row
   
   * #### apply function to cols
   ```python
-  df.apply(np.max) #displays max of each column - can add axis=1 but lambda functions are more convenient
+  df.apply(np.max) #displays max of each column - can add axis=1 for rows but lambda functions are more convenient
   ```
   
   * #### apply function to rows - lambda function
@@ -61,23 +61,23 @@ df[:1] ]     #indexing the first row
   ```
 
 
-  * #### apply function to cols
+  * #### grouping
   ```python
   df.apply(np.max) #displays max of each column - can add axis=1 but lambda functions are more convenient
   ```
   
-  * #### apply function to rows - lambda function
+  * #### 
   ```python
   df[df['col'].apply(lambda s: s[0] == 'W')].head() #displays rows filtered by that column where value starts with W
   ```
   
-   * #### map function to replace values
+   * #### 
    replace values in a column - by passing a dictionary as its argument- {old value: new value}
   ```python
   d= {'No': False, 'Yes': True}
   df['col'] = df['col'].map(d)
   ```
-   * #### replace function
+   * #### 
    also replace values in a column - {name of column: dictionary itself}
   ```python
   df = df.replace({'col': d})
