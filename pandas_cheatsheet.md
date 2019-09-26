@@ -74,8 +74,8 @@ df[:1] ]     #indexing the first row
   
   ```
   another example from [2]
-    ```python
-  # Get the sum of the durations per month
+```python
+# Get the sum of the durations per month
 data.groupby('month')['duration'].sum()
 
 # Get the number of dates / entries in each month
