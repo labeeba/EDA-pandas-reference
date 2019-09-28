@@ -1,6 +1,6 @@
-[1] [summarized mainly from this kaggle kernel] (https://www.kaggle.com/kashnitsky/topic-1-exploratory-data-analysis-with-pandas)
+1. [summarized mainly from this kaggle kernel](https://www.kaggle.com/kashnitsky/topic-1-exploratory-data-analysis-with-pandas)
 
-[2] [more examples about group by and agg] (https://www.shanelynn.ie/summarising-aggregation-and-grouping-data-in-python-pandas/)
+2. [more examples about group by and agg](https://www.shanelynn.ie/summarising-aggregation-and-grouping-data-in-python-pandas/)
 
 main data structures - Series (1D) and Dataframe (2D)
 
